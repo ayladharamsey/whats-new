@@ -1,11 +1,11 @@
 import React from 'react';
 import './NewsArticle.css';
 
-const NewsArticle = story => {
+const NewsArticle = story =>{
    return (
        <article>
-           <h4>{story.title}</h4>
-           <p>{story.description}</p>
+           <h4>{story.story.headline}</h4>
+           <p>{story.story.description}</p>
            <button> Read More </button>
        </article>
    )
