@@ -1,6 +1,14 @@
 import React from 'react';
 import './NewsArticle.css';
 
-// NEWSARTICLE COMPONENT CODE GOES HERE
+const NewsArticle = story =>{
+   return (
+       <article>
+           <h4>{story.story.headline}</h4>
+           <p>{story.story.description}</p>
+           <button> Read More </button>
+       </article>
+   )
+}
 
 export default NewsArticle;

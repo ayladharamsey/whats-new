@@ -4,9 +4,10 @@ import NewsArticle from '../NewsArticle/NewsArticle'
 
 const NewsContainer = props => {
     return (
-        <div>
-            {props.map(newsStory => <NewsArticle key ={newsStory.id}/>)}
-        </div>
+        <main>
+            {props.local.map(newsStory => <NewsArticle key={newsStory.id} story={newsStory}/>)}
+            
+        </main>
     )
 }
 
