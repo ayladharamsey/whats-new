@@ -1,0 +1,13 @@
+article {
+    background-color: #E4E8C6;
+    width: 30%;
+    height: 350px;
+    padding: 20px;
+    display: inline-block;
+    margin: 20px;
+}
+
+img {
+    width: 200px;
+    height: 150px;
+}

@@ -7,6 +7,7 @@ import technology from '../../data/technology';
 import './App.css';
 import NewsContainer from '../NewsContainer/NewsContainer'
 import Menu from '../Menu/Menu'
+import SearchForm from '../SearchForm/SearchForm'
 
 class App extends Component {
   constructor() {
@@ -21,11 +22,21 @@ class App extends Component {
     this.setState({selectedNewsCategory: category})
   }
 
+  searchArticles = (query) => {
+    let foundArticle = this.state.selectedNewsCategory.find(article => {
+      return article.headline.includes(query)
+    })
+  }
+
   render () {
     return (
       <div className="app">
+        <h1>What's New?</h1>
         <Menu selectCategory = {this.selectCategory} />
-        <NewsContainer newsArticles = {this.state.selectedNewsCategory} />
+        <div className="primary-section">
+          <SearchForm searchArticles = {this.searchArticles}/>
+          <NewsContainer newsArticles = {this.state.selectedNewsCategory} />
+        </div>
       </div>
     );
   }

@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,9 +6,24 @@
 }
 
 .app {
-  display: flex;
-  background: #141527;
+  background: #F0F0F0;
   height: 100vh;
   text-align: center;
-  width: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  width: 200px;
+  margin: 20px;
+}
+
+.primary-section {
+  width: 80vw;
+  display: inline-block;
+}
+
+
