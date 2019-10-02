@@ -2,11 +2,10 @@ import React from 'react';
 import './NewsContainer.css'
 import NewsArticle from '../NewsArticle/NewsArticle'
 
-const NewsContainer = props => {
+const NewsContainer = ( {newsArticles} ) => {
     return (
         <main>
-            {props.local.map(newsStory => <NewsArticle key={newsStory.id} story={newsStory}/>)}
-            
+            {newsArticles.map(article => <NewsArticle key={article.id} story={article}/>)}
         </main>
     )
 }
