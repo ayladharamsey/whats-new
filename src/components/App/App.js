@@ -42,7 +42,7 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        <Menu selectCategory = {this.selectCategory} />
+        <Menu selectCategory = {this.state.selectCategory} />
         <div className="primary-section">
           <SearchForm searchArticles = {this.searchArticles}/>
           <NewsContainer newsArticles = {this.state.selectedNewsCategory} selectedArticle = {this.state.selectedArticle} linkOut = {this.linkOut} />

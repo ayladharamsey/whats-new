@@ -5,13 +5,25 @@ nav {
     flex-direction: column;
     background-color: #B7E6D6;
     line-height: 50px;
+    text-align: left;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2em;
     width: 200px;
-    margin: 20px;
     display: block;
     height: 40px;
+    margin: 20px 0px 20px 35px;
   }
+
+h3 {
+  margin-left: 40px;
+  background-color: #B7E6D6;
+  border-radius: 5px;
+
+}
+
+h3:hover {
+  color:#80C2B3;
+}

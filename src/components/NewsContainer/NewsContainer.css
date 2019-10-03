@@ -5,5 +5,7 @@ main {
     margin-left: 20vw;
     font-family: Roboto;
     margin-left: 15%;
+    overflow: scroll;
+    height: 100vh;
 }
 
