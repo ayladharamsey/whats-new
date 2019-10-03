@@ -7,18 +7,10 @@
 
 .app {
   background: #F0F0F0;
-  height: 100vh;
+  height: 100%;
   text-align: center;
   width: 100vw;
   display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  width: 200px;
-  margin: 20px;
 }
 
 .primary-section {

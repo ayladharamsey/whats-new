@@ -8,13 +8,15 @@ import './App.css';
 import NewsContainer from '../NewsContainer/NewsContainer'
 import Menu from '../Menu/Menu'
 import SearchForm from '../SearchForm/SearchForm'
+import { throwStatement } from '@babel/types';
 
 class App extends Component {
   constructor() {
     super();
       this.state = {
         newsData: [local, health, entertainment, science, technology],
-        selectedNewsCategory: local
+        selectedNewsCategory: local,
+        selectedArticle: ''
       }
   }
 
@@ -26,16 +28,24 @@ class App extends Component {
     let foundArticle = this.state.selectedNewsCategory.find(article => {
       return article.headline.includes(query)
     })
+    this.setState({selectedArticle: foundArticle})
+  }
+
+  linkOut = (id) => {
+    let selected = ''
+    this.state.newsData.forEach(newsCategory => {
+      selected = newsCategory.find(news => news.id === id)
+    })
+    window.open(selected.url)
   }
 
   render () {
     return (
       <div className="app">
-        <h1>What's New?</h1>
-        <Menu selectCategory = {this.selectCategory} />
+        <Menu selectCategory = {this.state.selectCategory} />
         <div className="primary-section">
           <SearchForm searchArticles = {this.searchArticles}/>
-          <NewsContainer newsArticles = {this.state.selectedNewsCategory} />
+          <NewsContainer newsArticles = {this.state.selectedNewsCategory} selectedArticle = {this.state.selectedArticle} linkOut = {this.linkOut} />
         </div>
       </div>
     );
