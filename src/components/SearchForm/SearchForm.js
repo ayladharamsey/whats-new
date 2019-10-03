@@ -20,11 +20,18 @@ class SearchForm extends Component {
         this.props.searchArticles(search)
     }
 
+    reset = () => {
+        this.setState({
+          query: ''
+        })
+      }
+
     render() {
         return (
             <form>
                 <input type="text" name="query" value={this.state.query} onChange={this.submitQuery} />
                 <button onClick={this.handleSumbit}>Search</button>
+                <button onClick={this.reset}> Reset </button>
             </form>
         )
 

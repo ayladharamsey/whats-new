@@ -35,7 +35,7 @@ class App extends Component {
       <div className="app">
         <Menu selectCategory = {this.selectCategory} />
         <div className="primary-section">
-          <SearchForm searchArticles = {this.searchArticles}/>
+          <SearchForm searchArticles = {this.searchArticles} reset ={this.reset}/>
           <NewsContainer newsArticles = {this.state.selectedNewsCategory} selectedArticle = {this.state.selectedArticle} />
         </div>
       </div>
