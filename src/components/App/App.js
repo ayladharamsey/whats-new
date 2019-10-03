@@ -14,7 +14,8 @@ class App extends Component {
     super();
       this.state = {
         newsData: [local, health, entertainment, science, technology],
-        selectedNewsCategory: local
+        selectedNewsCategory: local,
+        selectedArticle: ''
       }
   }
 
@@ -26,16 +27,16 @@ class App extends Component {
     let foundArticle = this.state.selectedNewsCategory.find(article => {
       return article.headline.includes(query)
     })
+    this.setState({selectedArticle: foundArticle})
   }
 
   render () {
     return (
       <div className="app">
-        <h1>What's New?</h1>
         <Menu selectCategory = {this.selectCategory} />
         <div className="primary-section">
           <SearchForm searchArticles = {this.searchArticles}/>
-          <NewsContainer newsArticles = {this.state.selectedNewsCategory} />
+          <NewsContainer newsArticles = {this.state.selectedNewsCategory} selectedArticle = {this.state.selectedArticle} />
         </div>
       </div>
     );

@@ -1,0 +1,24 @@
+form {
+    width: 80vw;
+    font-family: Roboto;
+    margin-top: 20px;
+}
+
+input {
+    width: 350px;
+    height: 30px;
+    border-style: solid;
+    border-color: #C2D68B;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: #F0F0F0;
+}
+
+button {
+    width: 70px;
+    height: 30px;
+    border-color: #B7E6D6;
+    background-color:#F0F0F0;
+    font-size: .7em;
+    border-radius: 5px;
+}

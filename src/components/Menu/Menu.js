@@ -9,6 +9,7 @@ import './Menu.css'
 const Menu = ({selectCategory}) => {
     return (
         <nav>
+            <h1> What's New </h1>
             <h3 onClick={event => selectCategory(technology)} >Tech</h3>
             <h3 onClick={event => selectCategory(local)}>Local</h3>
             <h3 onClick={event => selectCategory(entertainment)}>Entertainment</h3>
