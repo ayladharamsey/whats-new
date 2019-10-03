@@ -22,7 +22,7 @@ class SearchForm extends Component {
 
     reset = () => {
         this.setState({
-          query: ''
+          query: ""
         })
       }
 
