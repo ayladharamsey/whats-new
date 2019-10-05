@@ -8,7 +8,6 @@ import './App.css';
 import NewsContainer from '../NewsContainer/NewsContainer'
 import Menu from '../Menu/Menu'
 import SearchForm from '../SearchForm/SearchForm'
-import { throwStatement } from '@babel/types';
 
 class App extends Component {
   constructor() {
@@ -36,13 +35,13 @@ class App extends Component {
     this.state.newsData.forEach(newsCategory => {
       selected = newsCategory.find(news => news.id === id)
     })
-    window.open(selected.url)
+    window.open(selected.url);
   }
 
   render () {
     return (
       <div className="app">
-        <Menu selectCategory = {this.state.selectCategory} />
+        <Menu selectCategory = {this.selectCategory} />
         <div className="primary-section">
           <SearchForm searchArticles = {this.searchArticles}/>
           <NewsContainer newsArticles = {this.state.selectedNewsCategory} selectedArticle = {this.state.selectedArticle} linkOut = {this.linkOut} />
