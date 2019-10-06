@@ -10,8 +10,8 @@ const Menu = ({selectCategory}) => {
     return (
         <nav>
             <h1> What's New </h1>
-            <h3 onClick={() => selectCategory(technology)} >Tech</h3>
             <h3 onClick={() => selectCategory(local)}>Local</h3>
+            <h3 onClick={() => selectCategory(technology)} >Tech</h3>
             <h3 onClick={() => selectCategory(entertainment)}>Entertainment</h3>
             <h3 onClick={() => selectCategory(science)}>Science</h3>
             <h3 onClick={() => selectCategory(health)}>Health</h3>

@@ -5,23 +5,31 @@ import NewsArticle from './NewsArticle';
 describe('NewsArticle', () => {
     let wrapper, storyObject;
 
-    beforeEach(() => {
+    it('should match the snapshot with all data passed correctly', () => {
         storyObject = {
             img : "https://www.cool.com",
             headline :"bad bitches take over the world",
             description :"things are going well",
             id : 2,
-            linkOut :jest.fn()
+            linkOut : jest.fn()
         };
         wrapper = shallow(<NewsArticle story = {storyObject} />) 
-    })
 
-    it('should match the snapshot with all data passed correctly', () => {
         expect(wrapper).toMatchSnapshot();
     })
 
-    it('render the image of the artcile', () => {
-        expect(wrapper.contains("https://www.cool.com")).toHaveBeenCalledWith("https://www.cool.com");
+    it.skip('should call the linkOut function when button is clicked', () => {
+        const linkOutMock = jest.fn();
+        storyObject = {
+            img : "https://www.cool.com",
+            headline :"bad bitches take over the world",
+            description :"things are going well",
+            id : 2,
+            linkOut : {linkOutMock}
+        };
+        wrapper = shallow(<NewsArticle story = {storyObject} />) 
+        wrapper.find('button').simulate('click');
+        expect(linkOutMock).toHaveBeenCalled();
     })
 
 })
