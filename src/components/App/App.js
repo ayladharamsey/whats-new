@@ -17,26 +17,26 @@ class App extends Component {
         selectedNewsCategory: local,
         selectedArticle: ''
       }
-  }
+  };
 
   selectCategory = (category) => {
     this.setState({selectedNewsCategory: category})
-  }
+  };
 
   searchArticles = (query) => {
     let foundArticle = this.state.selectedNewsCategory.find(article => {
       return article.headline.includes(query)
     })
     this.setState({selectedArticle: foundArticle})
-  }
+  };
 
   linkOut = (id) => {
     let selected = ''
     this.state.newsData.forEach(newsCategory => {
       selected = newsCategory.find(news => news.id === id)
-    })
+    });
     window.open(selected.url);
-  }
+  };
 
   render () {
     return (
@@ -48,7 +48,7 @@ class App extends Component {
         </div>
       </div>
     );
-  }
+  };
 }
 
 export default App;

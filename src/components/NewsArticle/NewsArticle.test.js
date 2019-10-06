@@ -17,7 +17,7 @@ describe('NewsArticle', () => {
         wrapper = shallow(<NewsArticle story = {storyObject} />) 
 
         expect(wrapper).toMatchSnapshot();
-    })
+    });
 
     it.skip('should call the linkOut function when button is clicked', () => {
         const linkOutMock = jest.fn();
@@ -32,6 +32,5 @@ describe('NewsArticle', () => {
         wrapper = shallow(<NewsArticle story = {storyObject} />) 
         wrapper.find('button').simulate('click');
         expect(linkOutMock).toHaveBeenCalledWith(2);
-    })
-
-})
+    });
+});
