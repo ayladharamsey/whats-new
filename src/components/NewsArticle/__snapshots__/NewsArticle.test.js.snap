@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsArticle should match the snapshot with all data passed correctly 1`] = `
+<article>
+  <img
+    alt="bad bitches take over the world"
+    src="https://www.cool.com"
+  />
+  <h4>
+    bad bitches take over the world
+  </h4>
+  <p>
+    things are going well
+  </p>
+  <button
+    onClick={[Function]}
+  >
+     Read More 
+  </button>
+</article>
+`;

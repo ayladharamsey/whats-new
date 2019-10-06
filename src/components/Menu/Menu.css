@@ -1,5 +1,5 @@
 nav {
-    height: 100vh;
+    height: 900px;
     width: 30vw;
     display: flex;
     flex-direction: column;
@@ -18,12 +18,12 @@ h1 {
   }
 
 h3 {
-  margin-left: 40px;
   background-color: #B7E6D6;
   border-radius: 5px;
-
+  padding-left: 30px;
 }
 
 h3:hover {
-  color:#80C2B3;
+  background-color:#80C2B3;
+
 }
