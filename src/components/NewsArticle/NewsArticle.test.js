@@ -11,6 +11,7 @@ describe('NewsArticle', () => {
             headline :"bad bitches take over the world",
             description :"things are going well",
             id : 2,
+            url: "www.cool.com",
             linkOut : jest.fn()
         };
         wrapper = shallow(<NewsArticle story = {storyObject} />) 
@@ -25,11 +26,12 @@ describe('NewsArticle', () => {
             headline :"bad bitches take over the world",
             description :"things are going well",
             id : 2,
+            url: "www.cool.com",
             linkOut : {linkOutMock}
         };
         wrapper = shallow(<NewsArticle story = {storyObject} />) 
         wrapper.find('button').simulate('click');
-        expect(linkOutMock).toHaveBeenCalled();
+        expect(linkOutMock).toHaveBeenCalledWith(2);
     })
 
 })
