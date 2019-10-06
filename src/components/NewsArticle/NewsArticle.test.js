@@ -23,7 +23,7 @@ describe('NewsArticle', () => {
         const linkOutMock = jest.fn();
         storyObject = {
             img : "https://www.cool.com",
-            headline :"bad bitches take over the world",
+            headline :"potatos take over the world",
             description :"things are going well",
             id : 2,
             url: "www.cool.com",
