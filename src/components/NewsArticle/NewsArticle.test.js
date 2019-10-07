@@ -3,33 +3,26 @@ import { shallow } from 'enzyme';
 import NewsArticle from './NewsArticle';
 
 describe('NewsArticle', () => {
-    let wrapper, storyObject;
+    let wrapper, storyObject, linkOutMock;
 
-    it('should match the snapshot with all data passed correctly', () => {
+    beforeEach(() => {
+        linkOutMock=jest.fn()
         storyObject = {
             img : "https://www.cool.com",
             headline :"bad bitches take over the world",
             description :"things are going well",
             id : 2,
-            linkOut : jest.fn()
+            url: "www.cool.com",
         };
-        wrapper = shallow(<NewsArticle story = {storyObject} />) 
+        wrapper = shallow(<NewsArticle story = {storyObject} linkOut={linkOutMock}/>)
+    })
 
+    it('should match the snapshot with all data passed correctly', () => { 
         expect(wrapper).toMatchSnapshot();
-    })
+    });
 
-    it.skip('should call the linkOut function when button is clicked', () => {
-        const linkOutMock = jest.fn();
-        storyObject = {
-            img : "https://www.cool.com",
-            headline :"bad bitches take over the world",
-            description :"things are going well",
-            id : 2,
-            linkOut : {linkOutMock}
-        };
-        wrapper = shallow(<NewsArticle story = {storyObject} />) 
+    it('should call the linkOut function when button is clicked', () => {
         wrapper.find('button').simulate('click');
-        expect(linkOutMock).toHaveBeenCalled();
-    })
-
-})
+        expect(linkOutMock).toHaveBeenCalledWith(2);
+    });
+});

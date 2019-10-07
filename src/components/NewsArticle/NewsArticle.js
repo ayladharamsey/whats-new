@@ -10,6 +10,6 @@ const NewsArticle = ({ story, linkOut }) => {
            <button onClick={() => linkOut(story.id)}> Read More </button>
        </article>
    )
-}
+};
 
 export default NewsArticle;

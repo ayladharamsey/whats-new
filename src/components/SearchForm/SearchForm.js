@@ -7,24 +7,24 @@ class SearchForm extends Component {
         this.state = {
             query: ""
         }
-    }
+    };
 
     submitQuery = event => {
         this.setState({[event.target.name]: [event.target.value]})
-    }
+    };
 
     handleSumbit = event => {
         event.preventDefault();
         const search = this.state.query
         this.setState({query:""})
         this.props.searchArticles(search)
-    }
+    };
 
     reset = () => {
         this.setState({
           query: ""
         })
-      }
+      };
 
     render() {
         return (
@@ -35,7 +35,7 @@ class SearchForm extends Component {
             </form>
         )
 
-    }
+    };
 }
 
 export default SearchForm;

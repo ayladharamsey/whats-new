@@ -3,20 +3,20 @@ import React from 'react'
 import { shallow } from 'enzyme';
 
 describe ('Menu', () => {
-    let wrapper, category; 
+    let wrapper, mockSelect; 
 
     beforeEach(() => {
-        category='potatos'
-        wrapper = shallow(<Menu selectCategory={category} />)
+        mockSelect= jest.fn()
+        wrapper = shallow(<Menu selectCategory={mockSelect} />)
     });
 
     it('should be able to access the selectCategory function ', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it.skip('should be able to call selectCategory on click', () => {
-        
-
+    it('should be able to call selectCategory on click of a topic', () => {
+        wrapper.find('h3').at(0).simulate('click');
+        expect(mockSelect).toHaveBeenCalled();
     });
 
 
