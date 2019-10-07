@@ -33,5 +33,11 @@ describe('SearchForm', () => {
         expect(wrapper.state()).toEqual({query: ''});
     });
 
+    it.skip('should query state upon typing', () => {  
+        wrapper.instance().submitQuery(mockEvent)      
+        wrapper.find('input').simulate('change')
+        expect(wrapper.state('query')).toEqual({query: 'testing'})
+    });
+
 
 });
