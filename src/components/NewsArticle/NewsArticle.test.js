@@ -22,10 +22,7 @@ describe('NewsArticle', () => {
     });
 
     it('should call the linkOut function when button is clicked', () => {
-        global.open = jest.fn();
-        wrapper.instance().forceUpdate()
         wrapper.find('button').simulate('click');
         expect(linkOutMock).toHaveBeenCalledWith(2);
-        expect(global.open).toBeCalled();
     });
 });

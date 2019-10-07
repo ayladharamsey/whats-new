@@ -3,11 +3,12 @@ import { shallow } from 'enzyme';
 import SearchForm from './SearchForm'
 
 describe('SearchForm', () => {
-    let wrapper, article, mockEvent; 
+    let wrapper, mockEvent, searchArticlesMock; 
 
     beforeEach(() => {        
-        mockEvent = { target: { name: 'cheese', value: 'i love so much'} }
-        wrapper = shallow(<SearchForm searchArticles = {[article]}/>)
+        mockEvent = { target: { name: 'test', value: 'testing'} }
+        searchArticlesMock=jest.fn();
+        wrapper = shallow(<SearchForm searchArticles = {searchArticlesMock}/>)
     });
 
     it('should match the snapshot', () => {
