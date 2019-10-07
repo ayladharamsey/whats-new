@@ -3,7 +3,7 @@ import React from 'react'
 import { shallow } from 'enzyme';
 
 describe ('Menu', () => {
-    let wrapper, category, mockSelect; 
+    let wrapper, mockSelect; 
 
     beforeEach(() => {
         mockSelect= jest.fn()
