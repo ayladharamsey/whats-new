@@ -20,10 +20,15 @@ describe('SearchForm', () => {
         expect(wrapper.state('selectedArticle')).toEqual(mockEvent.value)
     });
 
-    it.skip('should reset state back to undefined after handling submit', () => {
-        wrapper.instance().mockEvent.preventDefault= jest.fn();
+    it('should reset state back to undefined after handling submit', () => {
+        let mockPreventDefault = jest.fn()
+        let mockEvent = {
+            preventDefault : mockPreventDefault
+        }
+        wrapper.instance().handleSumbit(mockEvent)
+
+        expect(mockPreventDefault).toHaveBeenCalled();
         wrapper.instance().searchArticles = jest.fn();
-        wrapper.instance().handleSumbit(mockEvent);
         expect(wrapper.state()).toEqual({query: ''});
     });
 

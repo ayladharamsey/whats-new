@@ -15,14 +15,17 @@ describe('NewsArticle', () => {
             url: "www.cool.com",
         };
         wrapper = shallow(<NewsArticle story = {storyObject} linkOut={linkOutMock}/>)
-    })
+    });
 
     it('should match the snapshot with all data passed correctly', () => { 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should call the linkOut function when button is clicked', () => {
+        global.open = jest.fn();
+        wrapper.instance().forceUpdate()
         wrapper.find('button').simulate('click');
         expect(linkOutMock).toHaveBeenCalledWith(2);
+        expect(global.open).toBeCalled();
     });
 });
