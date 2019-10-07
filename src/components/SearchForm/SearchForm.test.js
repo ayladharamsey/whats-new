@@ -3,11 +3,12 @@ import { shallow } from 'enzyme';
 import SearchForm from './SearchForm'
 
 describe('SearchForm', () => {
-    let wrapper, article, mockEvent; 
+    let wrapper, mockEvent, searchArticlesMock; 
 
     beforeEach(() => {        
-        mockEvent = { target: { name: 'cheese', value: 'i love so much'} }
-        wrapper = shallow(<SearchForm searchArticles = {[article]}/>)
+        mockEvent = { target: { name: 'test', value: 'testing'} }
+        searchArticlesMock=jest.fn();
+        wrapper = shallow(<SearchForm searchArticles = {searchArticlesMock}/>)
     });
 
     it('should match the snapshot', () => {
@@ -30,6 +31,12 @@ describe('SearchForm', () => {
         expect(mockPreventDefault).toHaveBeenCalled();
         wrapper.instance().searchArticles = jest.fn();
         expect(wrapper.state()).toEqual({query: ''});
+    });
+
+    it.skip('should query state upon typing', () => {  
+        wrapper.instance().submitQuery(mockEvent)      
+        wrapper.find('input').simulate('change')
+        expect(wrapper.state('query')).toEqual({query: 'testing'})
     });
 
 

@@ -15,9 +15,9 @@ class SearchForm extends Component {
 
     handleSumbit = event => {
         event.preventDefault();
-        const search = this.state.query
-        this.setState({query:""})
-        this.props.searchArticles(search)
+        const search = this.state.query;
+        this.setState({query:""});
+        this.props.searchArticles(search);
     };
 
     reset = () => {
